@@ -5,11 +5,11 @@ import (
 	"testing"
 )
 
-func TestTextGlyph(t *testing.T) {
+func TestTextRenderer(t *testing.T) {
 	t.Run("One", func(t *testing.T) {
-		glyph := NewTextGlyph(1)
+		renderer := TextRenderer{1}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ┌────",
@@ -33,9 +33,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Two", func(t *testing.T) {
-		glyph := NewTextGlyph(2)
+		renderer := TextRenderer{2}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -59,9 +59,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Three", func(t *testing.T) {
-		glyph := NewTextGlyph(3)
+		renderer := TextRenderer{3}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -85,9 +85,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Four", func(t *testing.T) {
-		glyph := NewTextGlyph(4)
+		renderer := TextRenderer{4}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -111,9 +111,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Five", func(t *testing.T) {
-		glyph := NewTextGlyph(5)
+		renderer := TextRenderer{5}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ┌────",
@@ -137,9 +137,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Six", func(t *testing.T) {
-		glyph := NewTextGlyph(6)
+		renderer := TextRenderer{6}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷   ╷",
@@ -163,9 +163,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Seven", func(t *testing.T) {
-		glyph := NewTextGlyph(7)
+		renderer := TextRenderer{7}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ┌───┐",
@@ -189,9 +189,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Eight", func(t *testing.T) {
-		glyph := NewTextGlyph(8)
+		renderer := TextRenderer{8}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷   ╷",
@@ -215,9 +215,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Nine", func(t *testing.T) {
-		glyph := NewTextGlyph(9)
+		renderer := TextRenderer{9}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ┌───┐",
@@ -241,9 +241,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Ten", func(t *testing.T) {
-		glyph := NewTextGlyph(10)
+		renderer := TextRenderer{10}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"────┐    ",
@@ -267,9 +267,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Twenty", func(t *testing.T) {
-		glyph := NewTextGlyph(20)
+		renderer := TextRenderer{20}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -293,9 +293,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Thirty", func(t *testing.T) {
-		glyph := NewTextGlyph(30)
+		renderer := TextRenderer{30}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -319,9 +319,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Fourty", func(t *testing.T) {
-		glyph := NewTextGlyph(40)
+		renderer := TextRenderer{40}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -345,9 +345,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Fifty", func(t *testing.T) {
-		glyph := NewTextGlyph(50)
+		renderer := TextRenderer{50}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"────┐    ",
@@ -371,9 +371,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Sixty", func(t *testing.T) {
-		glyph := NewTextGlyph(60)
+		renderer := TextRenderer{60}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"╷   ╷    ",
@@ -397,9 +397,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Seventy", func(t *testing.T) {
-		glyph := NewTextGlyph(70)
+		renderer := TextRenderer{70}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"┌───┐    ",
@@ -423,9 +423,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Eighty", func(t *testing.T) {
-		glyph := NewTextGlyph(80)
+		renderer := TextRenderer{80}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"╷   ╷    ",
@@ -449,9 +449,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Ninety", func(t *testing.T) {
-		glyph := NewTextGlyph(90)
+		renderer := TextRenderer{90}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"┌───┐    ",
@@ -475,9 +475,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("One hundred", func(t *testing.T) {
-		glyph := NewTextGlyph(100)
+		renderer := TextRenderer{100}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -501,9 +501,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Two hundred", func(t *testing.T) {
-		glyph := NewTextGlyph(200)
+		renderer := TextRenderer{200}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -527,9 +527,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Three hundred", func(t *testing.T) {
-		glyph := NewTextGlyph(300)
+		renderer := TextRenderer{300}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -553,9 +553,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Four hundred", func(t *testing.T) {
-		glyph := NewTextGlyph(400)
+		renderer := TextRenderer{400}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -579,9 +579,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Five hundred", func(t *testing.T) {
-		glyph := NewTextGlyph(500)
+		renderer := TextRenderer{500}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -605,9 +605,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Six hundred", func(t *testing.T) {
-		glyph := NewTextGlyph(600)
+		renderer := TextRenderer{600}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -631,9 +631,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Seven hundred", func(t *testing.T) {
-		glyph := NewTextGlyph(700)
+		renderer := TextRenderer{700}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -657,9 +657,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Eight hundred", func(t *testing.T) {
-		glyph := NewTextGlyph(800)
+		renderer := TextRenderer{800}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -683,9 +683,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Nine hundred", func(t *testing.T) {
-		glyph := NewTextGlyph(900)
+		renderer := TextRenderer{900}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -709,9 +709,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("One thousand", func(t *testing.T) {
-		glyph := NewTextGlyph(1000)
+		renderer := TextRenderer{1000}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -735,9 +735,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Two thousand", func(t *testing.T) {
-		glyph := NewTextGlyph(2000)
+		renderer := TextRenderer{2000}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -761,9 +761,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Three thousand", func(t *testing.T) {
-		glyph := NewTextGlyph(3000)
+		renderer := TextRenderer{3000}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -787,9 +787,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Four thousand", func(t *testing.T) {
-		glyph := NewTextGlyph(4000)
+		renderer := TextRenderer{4000}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -813,9 +813,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Five thousand", func(t *testing.T) {
-		glyph := NewTextGlyph(5000)
+		renderer := TextRenderer{5000}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -839,9 +839,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Six thousand", func(t *testing.T) {
-		glyph := NewTextGlyph(6000)
+		renderer := TextRenderer{6000}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -865,9 +865,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Seven thousand", func(t *testing.T) {
-		glyph := NewTextGlyph(7000)
+		renderer := TextRenderer{7000}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -891,9 +891,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Eight thousand", func(t *testing.T) {
-		glyph := NewTextGlyph(8000)
+		renderer := TextRenderer{8000}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -917,9 +917,9 @@ func TestTextGlyph(t *testing.T) {
 	})
 
 	t.Run("Nine thousand", func(t *testing.T) {
-		glyph := NewTextGlyph(9000)
+		renderer := TextRenderer{9000}
 
-		actual := glyph.String()
+		actual := renderer.Render()
 
 		expected := strings.Join([]string{
 			"    ╷    ",
@@ -944,9 +944,9 @@ func TestTextGlyph(t *testing.T) {
 
 	t.Run("Crosses", func(t *testing.T) {
 		t.Run("Ones", func(t *testing.T) {
-			glyph := NewTextGlyph(1111)
+			renderer := TextRenderer{1111}
 
-			actual := glyph.String()
+			actual := renderer.Render()
 
 			expected := strings.Join([]string{
 				"────┬────",
@@ -970,9 +970,9 @@ func TestTextGlyph(t *testing.T) {
 		})
 
 		t.Run("Twos", func(t *testing.T) {
-			glyph := NewTextGlyph(2222)
+			renderer := TextRenderer{2222}
 
-			actual := glyph.String()
+			actual := renderer.Render()
 
 			expected := strings.Join([]string{
 				"    ╷    ",
@@ -996,9 +996,9 @@ func TestTextGlyph(t *testing.T) {
 		})
 
 		t.Run("Fives", func(t *testing.T) {
-			glyph := NewTextGlyph(5555)
+			renderer := TextRenderer{5555}
 
-			actual := glyph.String()
+			actual := renderer.Render()
 
 			expected := strings.Join([]string{
 				"────┬────",
@@ -1022,9 +1022,9 @@ func TestTextGlyph(t *testing.T) {
 		})
 
 		t.Run("Sevens", func(t *testing.T) {
-			glyph := NewTextGlyph(7777)
+			renderer := TextRenderer{7777}
 
-			actual := glyph.String()
+			actual := renderer.Render()
 
 			expected := strings.Join([]string{
 				"┌───┬───┐",
@@ -1048,9 +1048,9 @@ func TestTextGlyph(t *testing.T) {
 		})
 
 		t.Run("Eights", func(t *testing.T) {
-			glyph := NewTextGlyph(8888)
+			renderer := TextRenderer{8888}
 
-			actual := glyph.String()
+			actual := renderer.Render()
 
 			expected := strings.Join([]string{
 				"╷   ╷   ╷",
@@ -1074,9 +1074,9 @@ func TestTextGlyph(t *testing.T) {
 		})
 
 		t.Run("Nines", func(t *testing.T) {
-			glyph := NewTextGlyph(9999)
+			renderer := TextRenderer{9999}
 
-			actual := glyph.String()
+			actual := renderer.Render()
 
 			expected := strings.Join([]string{
 				"┌───┬───┐",
