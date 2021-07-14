@@ -34,6 +34,11 @@ OPTIONS
 
 	flag.Parse()
 
+	if len(os.Args) == 1 {
+		flag.Usage()
+		os.Exit(1)
+	}
+
 	value, err := strconv.Atoi(flag.Arg(0))
 	if err != nil {
 		fmt.Println("Failed to parse input as an integer:", os.Args[1])
