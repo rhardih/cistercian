@@ -18,7 +18,7 @@ NAME:
   cistercian - convert base 10 number to equivalent cistercian numeral glyph
 
 USAGE:
-  cistertian [options] value
+  cistercian [options] value
 
 VERSION:
   1.0.0
