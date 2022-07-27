@@ -31,6 +31,8 @@ OPTIONS
 
 	flag.Bool("text", true, "Output glyph as text to stdout")
 	shouldOutputSVG := flag.Bool("svg", false, "Output glyph as SVG to stdout")
+	strokeWidth := flag.Int("stroke-width", 10, "Stroke width (SVG)")
+	strokeColor := flag.String("stroke-color", "#000", "Stroke color (SVG)")
 
 	flag.Parse()
 
@@ -48,7 +50,10 @@ OPTIONS
 	var renderer Renderer
 
 	if *shouldOutputSVG {
-		renderer = SVGRenderer{Value: value}
+		renderer = SVGRenderer{Value: value,
+			Stroke: *strokeWidth,
+			Color:  *strokeColor,
+		}
 	} else {
 		renderer = TextRenderer{Value: value}
 	}
