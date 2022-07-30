@@ -13,7 +13,9 @@ type Point struct {
 }
 
 type SVGRenderer struct {
-	Value int
+	Value  int
+	Stroke int
+	Color  string
 }
 
 func (s SVGRenderer) Render() string {
@@ -22,7 +24,7 @@ func (s SVGRenderer) Render() string {
 	width := 200
 	height := 280
 	padding := 10
-	lineStyle := `stroke="#000" stroke-width="10"`
+	lineStyle := fmt.Sprintf(`stroke="%s" stroke-width="%d"`, s.Color, s.Stroke)
 	polyLineStyle := fmt.Sprintf(`%s fill="none"`, lineStyle)
 
 	ones := s.Value % 10
@@ -53,6 +55,8 @@ func (s SVGRenderer) Render() string {
 	xCoords := []int{p10.x, p1.x}
 	yCoords := []int{p10.y, p1.y}
 
+	canvas.Line(p1.x, p1.y, p1.x, p11.y, lineStyle)
+
 	switch ones {
 	case 1:
 		xCoords = append(xCoords, p2.x)
@@ -81,8 +85,9 @@ func (s SVGRenderer) Render() string {
 		xCoords = append(xCoords, p2.x, p5.x, p4.x)
 		yCoords = append(yCoords, p2.y, p5.y, p4.y)
 	}
-
-	canvas.Polyline(xCoords, yCoords, polyLineStyle)
+	if ones != 6 && ones != 0 {
+		canvas.Polyline(xCoords, yCoords, polyLineStyle)
+	}
 
 	xCoords = []int{p10.x, p1.x}
 	yCoords = []int{p10.y, p1.y}
@@ -115,8 +120,9 @@ func (s SVGRenderer) Render() string {
 		xCoords = append(xCoords, p0.x, p3.x, p4.x)
 		yCoords = append(yCoords, p0.y, p3.y, p4.y)
 	}
-
-	canvas.Polyline(xCoords, yCoords, polyLineStyle)
+	if tens != 6 && tens != 0 {
+		canvas.Polyline(xCoords, yCoords, polyLineStyle)
+	}
 
 	xCoords = []int{p1.x, p10.x}
 	yCoords = []int{p1.y, p10.y}
@@ -149,8 +155,9 @@ func (s SVGRenderer) Render() string {
 		xCoords = append(xCoords, p11.x, p8.x, p7.x)
 		yCoords = append(yCoords, p11.y, p8.y, p7.y)
 	}
-
-	canvas.Polyline(xCoords, yCoords, polyLineStyle)
+	if hundreds != 6 && hundreds != 0 {
+		canvas.Polyline(xCoords, yCoords, polyLineStyle)
+	}
 
 	xCoords = []int{p1.x, p10.x}
 	yCoords = []int{p1.y, p10.y}
@@ -183,8 +190,9 @@ func (s SVGRenderer) Render() string {
 		xCoords = append(xCoords, p9.x, p6.x, p7.x)
 		yCoords = append(yCoords, p9.y, p6.y, p7.y)
 	}
-
-	canvas.Polyline(xCoords, yCoords, polyLineStyle)
+	if thousands != 6 && thousands != 0 {
+		canvas.Polyline(xCoords, yCoords, polyLineStyle)
+	}
 
 	canvas.End()
 
